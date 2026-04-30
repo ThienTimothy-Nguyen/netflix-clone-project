@@ -8,7 +8,10 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const queryClient = new QueryClient()
 
-const router = createRouter({ routeTree })
+const router = createRouter({ 
+  routeTree,
+  basepath: '/Netflix-Clone-Project/',
+  })
 
 declare module '@tanstack/react-router' {
   interface Register {
