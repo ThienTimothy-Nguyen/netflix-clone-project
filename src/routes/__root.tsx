@@ -19,7 +19,7 @@ export const Route = createRootRoute({
           </div>
           <footer className='flex row mt-10'>
               <div></div>
-              <p className='text-xs'>© 2026 Nexflix</p>
+              <p className='text-xs'>© 2026 NetReact</p>
           </footer>
       </ClerkProvider>
     </React.Fragment>
