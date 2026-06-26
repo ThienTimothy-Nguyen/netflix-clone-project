@@ -3,15 +3,17 @@ import { Outlet, createRootRoute } from '@tanstack/react-router';
 import Header from '@/components/Header';
 import { ClerkProvider} from '@clerk/react';
 
-const publishableKey = import.meta.env.VITE_PUBLIC_CLERK_PUBLISHABLE_KEY
-console.log(publishableKey)
+const publishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+if (!publishableKey) {
+  throw new Error("Missing VITE_CLERK_PUBLISHABLE_KEY");
+}
 
 export const Route = createRootRoute({
   component: () => (
     <React.Fragment>
       <ClerkProvider 
         publishableKey={publishableKey}
-        afterSignOutUrl="/Netflix-Clone-Project/"
+        afterSignOutUrl="/"
       >
           <Header />
           <div className='min-h-[80vh]'>
